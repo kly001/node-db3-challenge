@@ -10,18 +10,18 @@ module.exports = {
 }
 
 function find() {
-    return db('scheme')
+    return db('schemes')
 }
 
 function findById(id) {
+    return db('schemes').where({id}).first();
+    }
+
+function findSteps(id) {
 
 }
 
-function findSteps() {
-
-}
-
-function add() {
+function add(scheme) {
 
 }
 
@@ -30,5 +30,5 @@ function update(changes,id) {
 }
 
 function remove(id) {
-    
+
 }

@@ -25,7 +25,7 @@ function findSteps(id) {
 }
 
 function add(scheme) {
-    return db('schemes').insert('scheme')
+    return db('schemes').insert(scheme)
     .then(ids => {
         return findById(ids[0])
     })
@@ -33,7 +33,10 @@ function add(scheme) {
 }
 
 function update(changes,id) {
-
+return db('schemes').where({id}).update(changes)
+    .then(count => {
+        return findById(id)
+    })
 }
 
 function remove(id) {

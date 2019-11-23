@@ -40,5 +40,5 @@ return db('schemes').where({id}).update(changes)
 }
 
 function remove(id) {
-
+return db('schemes').where({id}).del()
 }
